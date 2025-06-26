@@ -1,0 +1,56 @@
+
+
+//@import '../../../node_modules/bootstrap/scss/bootstrap';
+@import '../node_modules/@splidejs/splide/src/css/template/default/index.scss';
+@import '../node_modules/bootstrap/scss/functions';
+@import '../node_modules/bootstrap/scss/variables';
+@import "../node_modules/bootstrap/scss/mixins";
+
+
+//@import 'base/break-points';
+@import 'base/mixin';
+@import 'base/var';
+@import 'base/maps';
+@import 'base/utility';
+@import 'base/base';
+@import 'base/typography';
+
+@import 'component/arrows';
+@import 'component/cms';
+@import 'component/carousel';
+@import 'component/breadcrumb';
+@import 'component/pagination';
+@import 'component/batch';
+@import 'component/fancyapp';
+@import 'component/offcanvas';
+@import 'component/nav';
+@import 'component/contact';
+@import 'component/splide';
+@import 'component/buttons';
+@import 'component/media';
+@import 'component/banner';
+@import 'component/form-element';
+@import 'component/tabs';
+@import 'component/cards';
+@import 'component/accordian';
+@import 'component/sidebar';
+@import 'component/filter';
+@import 'component/reviews';
+@import 'component/modal';
+@import 'component/dropdown';
+@import 'component/language';
+@import 'component/member';
+@import 'component/uploads';
+@import 'component/stats';
+@import 'component/favourite';
+@import 'component/not-found';
+
+
+@import 'modul/header';
+@import 'modul/footer';
+@import 'modul/home';
+@import 'modul/about';
+@import 'modul/blog';
+@import 'modul/booking';
+@import 'modul/gallery';
+@import 'modul/rota';

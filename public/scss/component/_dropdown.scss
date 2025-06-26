@@ -1,0 +1,128 @@
+
+
+// .dropdown {
+//     &-menu {        
+//         span {
+//             padding: 0 8px;
+//             cursor: pointer;
+//             &:hover {
+//                 opacity: 0.7;
+//             }
+//         }
+//     }
+
+//     &-staffList {        
+//         .dropdown {
+//             &-menu {
+//                 min-width: 246px;
+//                 border: none;
+//                 border-radius: 20px;
+//                 padding: 12px 17px;
+//                 @include box-shadow(0, 0, 8px, 1px, rgba(map-get($colors, 'black'), 0.1));
+//             }
+
+//             &-list {
+//                 max-height: 180px;
+//                 &::-webkit-scrollbar {
+//                     width: 5px;
+//                 }
+
+//                 /* Track */
+//                 &::-webkit-scrollbar-track {
+//                     background: mix(map-get($colors, 'white'), #000, 85%);
+//                 }
+
+//                 /* Handle */
+//                 &::-webkit-scrollbar-thumb {
+//                     background: map-get($colors, 'black');
+//                 }
+//             }
+
+//             // &-item {
+//             //     color: mix(map-get($colors, 'black'), #fff, 35%);
+//             //     &:hover {
+//             //         color: map-get($colors, 'black');
+//             //     }
+//             // }
+//         }
+//     }
+
+//     &-list {
+//         max-height: 250px;
+//         overflow-y: auto;
+//         a {
+//             color: mix(map-get($colors, 'black'), #fff, 35%);
+//             &:hover {
+//                 color: map-get($colors, 'black');
+//                 background-color: transparent;
+//             }
+//         }
+
+//         &.location {
+//             a {
+//                 padding-left: 25px;
+//                 position: relative;
+//                 &::before{
+//                    @include afterBefor(8px, 0, 15px, 15px, 'white', 0);
+//                    border-radius: 50%;
+//                    border: mix(map-get($colors, 'black'), #fff, 25%) 1px solid;
+//                 }
+
+//                 &:hover {
+//                     &::before{
+//                         border-color: map-get($colors, 'black');
+//                     }
+//                 }
+//             }
+//         }
+//     }
+
+    
+// }
+
+.dropdown {
+    &-menu {        
+        min-width: 200px;
+        padding: 8px 8px 8px 0;
+    }
+
+    &-list {
+        max-height: 140px;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+            width: 4px;
+            border-radius: 4px;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background-color: map-get($colors, 'black');
+            border-radius: 4px;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: map-get($colors, 'primary');
+            border-radius: 4px;
+        }
+
+    }
+
+    &-item {
+        color: mix(map-get($colors, 'black'), #fff, 35%);
+        width: auto;
+        &::after {
+            @include hoverEvvect();
+            top: 11px;
+        }
+        &:hover, &.active {
+            color: map-get($colors, 'primary');
+            background-color: transparent;
+            
+            &::after {
+                left: 100%;
+                opacity: 1;
+            }
+        }
+    }
+}

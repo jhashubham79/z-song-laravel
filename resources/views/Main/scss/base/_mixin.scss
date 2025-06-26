@@ -1,0 +1,154 @@
+//@include flexbox;
+@mixin flexbox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+//@include col;
+@mixin col {
+  @include flexbox;
+  flex-direction: column;
+}
+
+//@include row;
+@mixin row {
+  @include flexbox;
+  flex-direction: row;
+}
+
+//@include reset-list;
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+//@include transform(@context);
+@mixin transform($property) {
+  -webkit-transform: $property;
+  -moz-transform: $property;
+  -ms-transform: $property;
+  -o-transform: $property;
+  transform: $property;
+}
+
+//@include transition(@context);
+@mixin transition($x){
+  transition: $x;
+  -webkit-transition: $x;
+  -moz-transition: $x;
+  -ms-transition: $x;
+  -o-transition: $x;
+}
+
+//@include box-shadow(@context);
+@mixin box-shadow($left, $top, $blur, $radius, $color) {
+box-shadow: $left $top $blur $radius $color;
+-webkit-box-shadow: $left $top $blur $radius $color;
+-moz-box-shadow: $left $top $blur $radius $color;
+  -ms-box-shadow: $left $top $blur $radius $color;
+}
+
+//@include text-shadow(@context);
+@mixin text-shadow($left, $top, $radius, $color) {
+text-shadow: $left $top $radius $color;
+-webkit-text-shadow: $left $top $radius $color;
+-moz-text-shadow: $left $top $radius $color;
+  -ms-text-shadow: $left $top $radius $color;
+}
+
+//@include gradient(@context);
+@mixin gradient($color1, $color2) {
+background-color: $color1;
+filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#{$color1}, endColorstr=#{$color2});
+background-image: -moz-linear-gradient(center right, $color1, $color2);
+background-image: -webkit-gradient(linear, 0% 60%, 60% 100%, from($color1), to($color2));
+}
+
+@mixin afterBefor($pt, $pl, $w, $h, $bc, $ba) {
+  content: "";
+  position: absolute;
+  top: $pt;
+  left: $pl;
+  width: $w;
+  height: $h;
+  background-color: rgba(map-get($colors, $bc), $ba);
+}
+
+//nav hover effect
+@mixin hoverEvvect() {
+    @include afterBefor(7px, 90%, 12px, 5px, 'primary', 0);
+    background-image: url(../images/sub-menu-hover.svg);
+    background-size: 100%;
+    opacity: 0;
+    transition: ease all 0.3s;
+}
+
+
+@mixin arrowAfter($aw, $ah, $bw, $bc) {
+  content: "";
+  display: block;
+  width: $aw;
+  height: $ah;
+  border-width: $bw;
+  border-style: solid;
+  border-color: map-get($colors, $bc);
+}
+
+//@include borderRadius(@context);
+$prefixes: -webkit-, -moz-, -o-, -ms-, "";
+@mixin borderRadius($size...) {
+@if length($size) == 1 {
+  @each $prefix in $prefixes {
+    #{$prefix}border-radius: $size;
+  }
+} @else {
+  @include customBorderRadius($size...);
+}
+}
+
+//@include customBorderRadius(@context);
+@mixin customBorderRadius($topLeft: 0, $topRight: 0, $bottomRight: 0, $bottomLeft: 0) {
+@each $prefix in $prefixes {
+  @if $prefix == "-moz-" {
+    @if $topLeft != 0 { -moz-border-radius-topleft: $topLeft; }
+    @if $topRight != 0 { -moz-border-radius-topright: $topRight; }
+    @if $bottomRight != 0 { -moz-border-radius-bottomright: $bottomRight; }
+    @if $bottomLeft != 0 { -moz-border-radius-bottomleft: $bottomLeft; }
+  } @else {
+    @if $topLeft != 0 { #{$prefix}border-top-left-radius: $topLeft; }
+    @if $topRight != 0 { #{$prefix}border-top-right-radius: $topRight; }
+    @if $bottomRight != 0 { #{$prefix}border-bottom-right-radius: $bottomRight; }
+    @if $bottomLeft != 0 { #{$prefix}border-bottom-left-radius: $bottomLeft; }
+  }
+}
+}
+
+//@include placeholder(@context);
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  @include optional-at-root('::-webkit-input-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root('::-moz-placeholder') {
+    @content;
+  }
+
+  @include optional-at-root(':-ms-input-placeholder') {
+    @content;
+  }
+}

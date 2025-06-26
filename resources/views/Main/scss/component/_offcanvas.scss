@@ -1,0 +1,35 @@
+
+
+.offcanvas {
+    &-filter {
+        visibility: visible;
+        width: 300px;
+        border: none;
+        @include customBorderRadius(20px, 0px, 0px, 20px);
+
+        .offcanvas-header, .offcanvas-body {
+            padding: 1rem 2rem;
+        }
+
+        .offcanvas-body {
+            margin-right: 12px;
+            &::-webkit-scrollbar {
+                width: 5px;
+            }
+
+            /* Track */
+            &::-webkit-scrollbar-track {
+                background: mix(map-get($colors, 'white'), #000, 85%);
+            }
+
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+                background: map-get($colors, 'black');
+            }
+        }
+    }
+
+    &-backdrop {
+        background-color: map-get($colors, 'primary');
+    } 
+}

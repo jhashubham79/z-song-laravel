@@ -1,0 +1,22 @@
+
+
+.pagination {
+    li {
+        margin: 0 3px;
+        a {
+            width: 30px;
+            height: 30px;
+            color: map-get($colors, 'primary');
+            &:hover {
+                background-color: rgba(map-get($colors, 'primary'), 0.5);
+            }
+
+        }
+        &.active {
+            a {
+                background-color: map-get($colors, 'primary');
+                color: map-get($colors, 'black');
+            }
+        }
+    }
+}

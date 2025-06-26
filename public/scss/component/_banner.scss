@@ -1,0 +1,18 @@
+
+.banner {   
+    // &-inner {
+    //     &-content {
+    //         padding: 119px 0 20px;
+    //         @include media-breakpoint-up(lg) {
+    //             padding: 200px 0 150px;
+    //         }
+    //     }
+    // }
+
+    .goDown {
+        width: 1px;
+        height: 50px;
+        background-color: mix(map-get($colors, 'white'), map-get($colors, 'black'), 75%);
+        bottom: -25px;
+    }
+}

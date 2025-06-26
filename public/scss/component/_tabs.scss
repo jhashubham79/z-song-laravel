@@ -1,0 +1,97 @@
+
+
+.tab {
+    &-custom {
+        .tabs {
+            li {
+                a {
+                    position: relative;
+                    &::before {
+                        @include afterBefor(0, 50%, 0, 2px, 'primary-alt', 1);
+                        top: inherit;
+                        bottom: 0;
+                        transition: all 0.3s ease;
+                        transform: translateX(-50%);
+                    }
+                    &.active {
+                        &::before {
+                            width: 100%;
+                        }                    
+                    }
+                    &:not(.active) {
+                        &::after {
+                            content: ' \e901';
+                            font-family: 'custom-icon';
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .item {
+            position: relative;
+            @include media-breakpoint-down(md) {
+                &:not(:last-child) {
+                    border-bottom: mix(map-get($colors, 'black'), #fff, 20%) 1px solid;
+                }
+                &::before {
+                    content: attr(data-title);
+                    display: block;
+                    font-size: 18px;
+                    padding: 10px 0;
+                    font-family: map-get($fonts, 'sub');
+                }
+
+                &::after {
+                    content: '\e901';
+                    font-family: 'custom-icon';
+                    font-size: 18px;
+                    position: absolute;
+                    top: 9px;
+                    right: 0;
+                }
+            }
+
+            &.active {
+                display: block;
+                @include media-breakpoint-down(md) {
+                    &::after {
+                        content: '\e900';
+                    }
+                }
+                .item-content {
+                    opacity: 1;
+                    visibility: visible;
+                    height: auto;
+                    -webkit-transition: opacity 0.3s ease-in-out;
+                    -moz-transition: opacity 0.3s ease-in-out;
+                    -o-transition: opacity 0.3s ease-in-out;
+                    -ms-transition: opacity 0.3s ease-in-out;
+                    transition: opacity 0.3s ease-in-out;
+                }
+            }
+
+            &-content {
+                opacity: 0;
+                visibility: hidden;
+                height: 0;
+            }
+        }
+    }
+
+    &-nav {
+        &-booking {
+            .btn {
+                @include media-breakpoint-down(md) {
+                    font-size: 11px;
+                }
+
+                &.active {
+                    color: #2D58FA !important;
+                    border-color: #2D58FA !important;
+                }
+            }
+        }
+    }
+}

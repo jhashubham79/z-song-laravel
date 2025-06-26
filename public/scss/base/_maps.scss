@@ -1,0 +1,17 @@
+$colors: (
+    'primary': $main-color,
+    'primary-light': $main-color-light,
+    'primary-dark': $main-color-dark,
+    'primary-alt': $main-alt,
+    'ratting': $ratting,
+    'info': $info,
+    'success': $success,
+
+    'white'  : $lightColor,
+    'black'  : $darkColor,
+    'dark-bg': $bgdark,
+);
+
+$fonts: (
+    'primary' : $primary-fonts,
+)

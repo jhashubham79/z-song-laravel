@@ -1,0 +1,180 @@
+
+
+.favourites  {
+    width: 30px;
+    height: 30px;
+    @include media-breakpoint-up(md) {
+        width: 37px;
+        height: 37px;
+    }
+    i {        
+        &:not(.active) {
+            //@include text-shadow(0,0,4px, map-get($colors, 'primary'));
+            filter: drop-shadow(0px 0px 2px map-get($colors, 'primary'));
+            color: map-get($colors, 'dark-bg');
+        }
+        &.active {            
+            color: map-get($colors, 'primary');
+        }
+    }
+
+    &-message {
+        position: absolute;
+        right: 0;
+        bottom: 83%;
+        white-space: nowrap;
+        background-color: map-get($colors, 'white');
+        border-radius: 3px;
+        box-shadow: 0 0 4px 1px rgba(map-get($colors, 'black'), 0.07);
+        display: none;
+        color: map-get($colors, 'black');
+        font-size: 12px;
+        z-index: 12;
+        padding: 8px 28px 8px 12px;  
+        color: #ADADAD;
+        @include media-breakpoint-up(md) {
+            right: -7px;
+            padding: 8px 34px 8px 12px;  
+        } 
+        &.active {
+            display: flex;
+            &::after {
+                @include afterBefor(100%, 8px, 0, 0, 'white', 0);
+                left: inherit;
+                right: 7px;
+                border-left: 8px solid transparent;
+                border-right: 8px solid transparent;
+                border-top: 8px solid map-get($colors, 'white');
+                filter: drop-shadow(1px 2px 1px rgba(map-get($colors, 'black'), 0.07));
+                @include media-breakpoint-up(md) {
+                    right: 19px;
+                }
+            }
+        }
+    }
+
+    &-close {
+        width: 14px;
+        height: 13px;
+        display: block;
+        margin-left: 8px;
+        position: absolute;
+        top: 10px;
+        right: 11px;
+        cursor: pointer;
+        background-image: url(../images/close.svg);
+        background-size: 100%;
+    }
+
+
+    &-filter {
+        li {
+            padding-left: 25px;
+            position: relative;
+            cursor: pointer;
+            color: mix(map-get($colors, 'black'), #fff, 32%);
+            &::before{
+                @include afterBefor(50%, 0, 15px, 15px, 'white', 0);
+                border-radius: 50%;
+                @include transform(translateY(-50%));
+                border: mix(map-get($colors, 'black'), #fff, 32%) 1px solid;
+            }
+
+            &::after{
+                @include afterBefor(50%, 3px, 9px, 9px, 'white', 0);
+                border-radius: 50%;
+                opacity: 0;
+                background-color: map-get($colors, 'primary');
+                @include transform(translateY(-50%));
+            }
+
+            &.active {
+                color: map-get($colors, 'primary');
+                &::before{
+                    border-color: map-get($colors, 'primary');
+                    //background-color: map-get($colors, 'primary');
+                }
+                &::after{
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &-clear {
+        .btn-close {
+            background-image: url(../images/close-light.svg);
+            opacity: 1;
+        }
+    }
+
+    &-gallery {
+        .gallery-item {
+            @include media-breakpoint-up(lg) {
+                margin-top: 3rem;
+            }
+        }
+    }
+
+    // &-duoprof {
+    //     .favourites-message {
+    //         right: inherit;
+    //         left: -7px;
+    //         @include media-breakpoint-down(md) {
+    //             bottom: -32px;
+    //         }
+    //         &.active {
+    //             &::after {
+    //                 left: 19px;
+    //                 right: inherit;
+    //                 @include media-breakpoint-down(md) {
+    //                     transform: rotate(180deg);
+    //                     top: inherit;
+    //                     bottom: 100%;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+
+    // &-duos {
+    //     //top: 67%;
+    //     @include media-breakpoint-up(xs) {
+    //         top: 69%;
+    //     }
+    //     @include media-breakpoint-up(sm) {
+    //         top: 77%;
+    //     }
+    //     @include media-breakpoint-up(md) {
+    //         top: 67%;
+    //     }
+    //     @include media-breakpoint-up(lg) {
+    //         top: 72%;
+    //     }
+    //     @include media-breakpoint-up(xl) {
+    //         top: 78%;
+    //     }
+    // }
+
+    // &-profile {
+    //     top: -57px;
+    //     .favourites-message {
+    //         @include media-breakpoint-down(md) {
+    //             bottom: -32px;                
+    //             right: inherit;
+    //             left: -7px;
+    //         }
+    //         &.active {
+    //             &::after {                    
+    //                 @include media-breakpoint-down(md) {
+    //                     transform: rotate(180deg);
+    //                     top: inherit;
+    //                     bottom: 100%;
+    //                     left: 19px;
+    //                     right: inherit;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+}

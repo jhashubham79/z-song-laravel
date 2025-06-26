@@ -1,0 +1,15 @@
+$main-color: #DBC8A8;
+$main-color-light: lighten(saturate(adjust-hue($main-color, 1), 3.39), 23.92);
+$main-color-dark: darken(saturate(adjust-hue($main-color, 1), 4.58), 18.04);
+
+$main-alt: #FF9933;
+$ratting: #F8B84E;
+$info: #33aade;
+$success: #8DEF3A;
+
+
+$lightColor: #fff;
+$darkColor: #000;
+$bgdark: lighten(saturate(adjust-hue($darkColor, 280), 8.11), 7.25);
+
+$primary-fonts: 'Manrope', sans-serif;

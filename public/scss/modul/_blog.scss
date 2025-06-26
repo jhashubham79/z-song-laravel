@@ -1,0 +1,13 @@
+
+
+.blog {
+    .container {
+        max-width: 870px;
+    }
+
+    &-details {
+        @include media-breakpoint-down(md) {
+            margin-top: -7px;
+        }
+    }
+}

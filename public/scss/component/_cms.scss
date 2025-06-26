@@ -1,0 +1,96 @@
+.cms {
+    ul, ol {
+        margin-bottom: 1.5rem;
+        font-weight: 300;
+        color: #ACA9A5;
+        li {
+            margin-bottom: 5px;
+            position: relative;
+            font-size: 16px;
+        }
+    }
+    ul {
+        li {
+            padding-left:  15px;
+            &::before {
+                content: "";
+                width: 4px;
+                height: 4px;
+                @include borderRadius(50%);
+                background-color: map-get($colors, 'black');
+                position: absolute;
+                left: 0;
+                top: 9px;
+            }
+        }
+    }
+
+    ol {
+        counter-reset: x;        
+        li {
+            counter-increment: X;
+            padding-left: 20px;
+            &::before {                
+                content: counter(X)'.';
+                font-weight: 500;
+                position: absolute;
+                left: 0;
+                top: 4px;
+                line-height: 1;
+                color: map-get($colors, 'black');                
+            }
+        }
+    }
+    
+    a {
+        &:not(.btn) {
+            color: map-get($colors, 'primary');            
+            &:hover {
+                text-decoration: none;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    em, i {
+        letter-spacing: 0.99px;
+    }
+
+    p {	
+        line-height: 1.8;
+        margin-bottom: 1.7rem;
+        font-size: 16px;
+        color: #FBF9ED;
+        img {
+            border: map-get($colors, 'primary') 1px solid;
+        }
+    }
+
+    b, strong {
+        font-weight: 600;
+        color: map-get($colors, 'white');
+    }
+
+    blockquote {
+        margin: 0 0 1.4rem;
+        line-height: 1.7;
+        font-size: 18px;
+        &::after, &::before {
+            content: '"';
+        }
+    }
+
+    &-white {
+      h1,h2,h3,h4,h5,h6, p, li {
+        color: map-get($colors, 'white');
+      }
+      li {
+        &::before {
+          background-color: map-get($colors, 'white');
+          color: map-get($colors, 'white');
+        }      
+      }
+    }
+
+
+}

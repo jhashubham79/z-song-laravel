@@ -1,0 +1,32 @@
+.notFound {    
+    background-image: url('../images/404.webp');
+    background-size: cover;
+    background-position: 50% 50%;
+    margin-top: -8px;
+    @include media-breakpoint-up(md) {
+        height: 100vh;
+        padding: 0;
+        margin-top: -10px;
+    }
+    &::after {
+        @include afterBefor(0, 0, 100%, 100%, 'black', 0.75);
+    }
+    
+    h1 {
+        font-size: 64px;
+        @include media-breakpoint-up(md) {
+            font-size: 87px;
+        }
+    }
+    p {
+        a {
+            font-weight: 700;
+            text-decoration: underline;
+            color: map-get($colors, 'black');
+            &:hover {
+                color: lighten(map-get($colors, 'black'), 15.69);
+            }
+        }
+    }
+
+}

@@ -1,0 +1,105 @@
+.accordion {
+    &-custome {
+        &-target {
+            z-index: 12;
+            &:checked ~ .accordion-custome-body {
+                display: block;
+                border-bottom: 1px solid #2c2822 !important;                
+            }
+
+            &:checked ~ .accordion-custome-button {
+                border-bottom: none !important;
+                &::after {
+                    content: '\e905';
+                }
+            }
+        }
+
+        &-body {
+            display: none;
+            padding-bottom: 25px;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 13;
+        }
+
+        &-button {
+            position: relative;
+            &::after {
+                @include afterBefor(1px,0,auto,auto,'white',0);
+                content: "\e906";
+                font-family: 'custome';
+                left: inherit;
+                right: 10px;
+                font-size: 18px;
+            }
+        }
+    }
+
+    // &-btn {
+    //     background-image: url(../img/minus.svg);
+    //     background-repeat: no-repeat;
+    //     background-position: right center;
+    //     background-size: 19px;
+    //     border-bottom: rgba(map-get($colors, 'black'), 0) 1px solid !important;
+    //     &.collapsed {
+    //         background-image: url(../img/plus.svg);
+    //         border-bottom-color: rgba(map-get($colors, 'black'), 0.2) !important;
+    //     }
+
+    //     &-md {
+    //         &-desable {
+    //             @include media-breakpoint-up(md) {
+    //                 background-image: none !important;
+    //                 pointer-events: none;
+    //             }
+    //         }
+    //     }
+
+    //     &-lg {
+    //         &-desable {
+    //             @include media-breakpoint-up(lg) {
+    //                 background-image: none !important;
+    //                 pointer-events: none;
+    //             }
+    //         }
+    //     }
+    // }
+
+    &-button {
+        &::after {
+            font-family: 'custome';
+            color: map-get($colors, 'primary');
+            background-image: none !important;
+            text-align: center;
+        }
+        &:not(.collapsed) {
+            &::after {
+                content: '\e905';                
+            }
+        }
+        &.collapsed {
+            &::after {
+                content: '\e906';
+            }
+        }
+    }
+
+    &-body {
+        position: relative;
+        padding: 0 20px;
+        @include media-breakpoint-up(lg) {
+            padding: 0 40px;
+        }
+        // &:not(.no-before-bg) {
+        //     &::before {
+        //         @include afterBefor(0,50%,32px,32px,'white',1);
+        //         top: inherit;
+        //         bottom: -16px;
+        //         transform: translateX(-50%);
+        //         background-image: url(../img/devider-bloom.svg);
+        //     }
+        // }
+    }
+
+}

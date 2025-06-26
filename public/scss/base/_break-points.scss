@@ -1,0 +1,58 @@
+
+
+//min-width @include for-size(lg-up) {@content}
+// @mixin for-size($size) {
+//   @if $size == xs-up {
+//     @media (min-width: 480px) { @content; }
+//   } @else if $size == sm-up {
+//     @media (min-width: 576px) { @content; }
+//   } @else if $size == md-up {
+//     @media (min-width: 768px) { @content; }
+//   } @else if $size == lg-up {
+//     @media (min-width: 992px) { @content; }
+//   } @else if $size == xl-up {
+//     @media (min-width: 1200px) { @content; }
+//   } @else if $size == xxl {
+//     @media (min-width: 1367px) { @content; }
+//   }
+// }
+
+
+// //max-width @include breakpoint(mx-mob-large) {@content}
+// @mixin breakpoint($breakpoint) {
+//   @if $breakpoint == mx-desktop {
+//     @media (max-width: 1400px) {
+//       @content;
+//     }
+//   }
+//   @else if $breakpoint == mx-landscape {
+//     @media (max-width: 1199px) {
+//       @content;
+//     }
+//   }
+//    @else if $breakpoint == mx-portrait {
+//     @media (max-width: 991px) {
+//       @content;
+//     }
+//   }
+//   @else if $breakpoint == mx-mob-large {
+//     @media (max-width: 767px) {
+//       @content;
+//     }
+//   }
+//   @else if $breakpoint == mx-mob {
+//     @media (max-width: 639px) {
+//       @content;
+//     }
+//   }
+//   @else if $breakpoint == mx-mob-medium {
+//     @media (max-width: 575px) {
+//       @content;
+//     }
+//   }
+//   @else if $breakpoint == mx-mob-small {
+//     @media (max-width: 479px) {
+//       @content;
+//     }
+//   }
+// }

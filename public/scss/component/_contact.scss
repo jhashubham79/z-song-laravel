@@ -1,0 +1,17 @@
+
+
+.contact {
+    li {
+        a {
+            width: 44px;
+            height: 44px;
+
+            &.whatsapp {
+                background-image: linear-gradient(to bottom, #61FD7D , #2BB826);
+            }
+            &.telegram {
+                background-image: linear-gradient(to bottom, #1E96C8 , #37AEE2);
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+
+.stats {
+    &-item {
+        text-align: center;
+        @include media-breakpoint-down(md) {
+            width: 50%;
+            text-align: right;
+            border-right: mix(map-get($colors, 'black'), #fff, 10%) 1px solid;
+            &:nth-child(2n + 2) {
+                text-align: left;
+                border: none;
+            }
+        }
+    }
+}

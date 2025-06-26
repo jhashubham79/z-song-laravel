@@ -1,0 +1,56 @@
+
+
+.arrow {
+    &-top, &-right, &-bottom, &-left {
+        &::after {
+            @include arrowAfter(8px, 8px, 1px, 'black');
+            border-bottom: none;
+            border-right: none;
+        }
+
+        &-xl {
+            &::after {
+                @include arrowAfter(12px, 12px, 1px, 'black');
+                border-bottom: none;
+                border-right: none;
+            }
+        }
+
+        &-white {
+            &::after {
+                border-color: map-get($colors, 'white');
+            }
+        }
+
+        &-primary {
+            &::after {
+                border-color: map-get($colors, 'primary');
+            }
+        }
+
+        
+    }
+
+    
+
+    &-top {
+        &::after {
+            @include transform(rotate(45deg));
+        }
+    }
+    &-right {
+        &::after {
+            @include transform(rotate(135deg));
+        }
+    }
+    &-bottom {
+        &::after {
+            @include transform(rotate(225deg));
+        }
+    }
+    &-left {
+        &::after {
+            @include transform(rotate(-45deg));
+        }
+    }
+}

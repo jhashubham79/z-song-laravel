@@ -1,0 +1,278 @@
+
+
+
+.form {
+    &-group {
+        label {
+            &.form-control {
+                padding-left: 130px;
+                text-align: right;
+                padding-right: 28px;
+                min-height: 49px;
+                font-size: 14px;
+                font-weight: 500;
+                text-transform: none;
+                font-size: 14px;
+                letter-spacing: 0;
+                margin-bottom: 0;
+                position: relative;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                &::after {
+                    content: "Choose file";
+                    position: absolute;
+                    font-weight: 300;
+                    width: 86px;
+                    color: map-get($colors, 'black');
+                    background-color: mix(map-get($colors, 'white'), #000, 85%);
+                    font-size: 12px;
+                    text-align: center;
+                    line-height: 26px;
+                    left: 11px;
+                    top: 10px;
+                    border-radius: 3px;
+                }
+            }
+
+            &.placeLabel {
+                left: 10px;
+                top: 10px;
+                font-size: 14px;
+                cursor: text;
+                background-color: map-get($colors, 'white');
+                transition: all 0.3s ease;
+            }
+        }
+        &.inputFile {
+            position: relative;
+            input[type="file"] {
+                position: absolute;
+                padding: 0;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                z-index: 12;
+                cursor: pointer;
+            }
+        } 
+
+        &.focused {
+            label {
+                &.placeLabel {
+                    top: -14px;
+                    transform: scale(0.8);
+                }
+            }
+        }
+    }
+    &-control {
+        padding: 13px 22px;
+        font-size: 16px;
+        font-weight: 400;
+        // background-color: map-get($colors, 'white');
+        // color: map-get($colors, 'black');
+        // border-color: mix(map-get($colors, 'black'), #fff, 20%);
+        // &[readonly] {
+        //     background-color: map-get($colors, 'white');
+        // }
+        &:focus {
+            //border-color: map-get($colors, 'primary');
+            //background-color: map-get($colors, 'white');
+            //color: map-get($colors, 'black');
+            @include box-shadow(0,0,8px,1px, rgba(map-get($colors, 'primary'), 0.5));
+        }
+        @include placeholder {
+            font-size: 16px;
+            font-weight: 300;
+            color: mix(map-get($colors, 'white'), #000, 42%);
+        }
+
+        // &.search {
+        //     height: 40px;
+        //     padding-left: 45px;
+        //     background-image: url(../img/search-bar.svg);
+        //     background-size: 25px;
+        //     background-position: 12px center;
+        //     background-repeat: no-repeat;
+        //     background-color: mix(map-get($colors, 'white'), #000, 98%);
+        // }
+
+        &-date, &-time {
+            background-position: 95% center;
+            background-repeat: no-repeat;
+        }
+
+        &-date {
+            background-image: url(../images/calendar.svg);            
+        }
+
+        &-time {
+            background-image: url(../images/time.svg);
+        }
+    }
+    // &-newslatter {
+    //     .btn {
+    //         top: 6px;
+    //         right: 6px;
+    //         font-size: 14px;
+    //     }
+    //     .form-control {
+    //         padding-right: 107px;
+    //         padding-top: 10px;
+    //         padding-bottom: 10px;
+    //     }
+    // }
+
+    // input{
+    //     &[type="date"], &[type="time"] {
+    //         &::-webkit-calendar-picker-indicator {
+    //             filter: invert(100%);
+    //         }
+    //     }        
+    // }
+    
+
+    // @include media-breakpoint-down(md) {
+    //     h2 {
+    //         font-size: 18px;
+    //     }
+    // }
+}
+
+textarea {
+    &.form-control {
+        height: 120px;
+        resize: none;
+    }
+}
+select {
+    &.form-control {
+        background-image: url(../images/down-arrow.svg);
+        background-position: 95% center;
+        background-repeat: no-repeat;
+        background-size: 15px;
+
+        option {
+            color: map-get($colors, 'black');
+        }
+    }
+}
+
+.custom-check {
+    display: none;
+    &:checked {
+        + .custom-check__label {
+            &::before {
+                border-color: map-get($colors, 'primary');
+                //content: '\f00c';
+                color: map-get($colors, 'primary');
+            }
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.custom-check__label {
+    position: relative;
+    padding-left: 25px;
+    font-size: 15px;
+    margin: 0;
+    color: mix(map-get($colors, 'black'), #fff, 35%);
+    cursor: pointer;
+    &::before {
+        content: "";
+        width: 15px;
+        height: 15px;
+        background-color: transparent;
+        border: mix(map-get($colors, 'black'), #fff, 12%) 1px solid;
+        position: absolute;
+        top: 4px;
+        left: 0;
+        text-align: center;
+        @include transition(0.5s ease all);
+    }
+    &::after {
+        content: "";
+        width: 9px;
+        height: 9px;
+        background-color: map-get($colors, 'primary');
+        position: absolute;
+        top: 7px;
+        left: 3px;
+        opacity: 0;
+    }
+}
+
+.ratings-group {
+    text-align: center;
+    margin-bottom: 30px;
+    label {
+        font-size: 16px;
+        letter-spacing: 0.4px;
+        color: map-get($colors, 'black');
+        font-weight: 400;
+        margin-bottom: 15px;
+    }    
+}
+
+.user-rating {
+    direction: rtl;
+    font-size: 20px;
+    unicode-bidi: bidi-override;
+    @include flexbox;
+    justify-content: center;
+    .star-cover {
+        position: relative;
+    }
+}
+.user-rating input {
+    opacity: 0;
+    position: relative;
+    left: -0;
+    z-index: 2;
+    cursor: pointer;
+    margin-left: -32px;
+    width: 18px;
+    height: 18px;
+}
+.user-rating span.star:before {
+    color: #777777;
+    content:"";
+    display: block;
+}
+.user-rating span.star {
+    display: inline-block;    
+    position: relative;
+    width: 18px;
+    height: 18px;
+}
+.user-rating span {
+        margin: 0 9px;
+}
+.user-rating span.star:before {
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/star-border.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+}
+.user-rating input:hover + span.star:before, 
+.user-rating input:hover + span.star ~ span.star:before, 
+.user-rating input:checked + span.star:before, 
+.user-rating input:checked + span.star ~ span.star:before {
+    color: #ffd100;
+    background-image: url(../images/star-fill.svg);
+}
+
+.g-recaptcha {
+    @include media-breakpoint-down(xs) {
+        transform-origin: left top;
+        @include transform(scale(0.95));
+    }
+}

@@ -1,0 +1,64 @@
+
+
+.batch {
+    &-blog {
+        width: 52px;
+        height: 52px;
+    }
+    &-quote {
+        width: 97px;
+        height: 97px;
+        @include media-breakpoint-up(md) {
+            width: 130px;
+            height: 130px;
+        }
+    }
+
+    &-social {
+        width: 34px;
+        height: 34px;
+        font-size: 18px;
+
+        &.telegram {
+            background-image: linear-gradient(to bottom, #37AEE2, #1E96C8);
+        }
+        &.whatsapp {
+            background-image: linear-gradient(to bottom, #61FD7D, #2BB826);
+        }
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    &-abailable, &-stm {
+        z-index: 12;
+        img {
+            height: auto;
+            display: block;
+            width: 100%;
+        }
+    }
+    &-abailable {
+        width: 72px;
+    }
+    &-stm {
+        width: 100%;
+        max-width: 165px;
+    }
+
+    &-notAbailable {
+        padding: 8px 0;
+        background-image: linear-gradient(to bottom, rgba(map-get($colors, 'dark-bg'), 0.7), rgba(map-get($colors, 'dark-bg'), 0));
+        img {
+            width: 100%;
+            max-width: 124px;
+        }
+    }
+
+    &-new {
+        font-size: 10px;
+        letter-spacing: 1.2px;
+        padding: 3px;
+    }
+}

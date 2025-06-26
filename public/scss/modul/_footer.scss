@@ -1,0 +1,89 @@
+
+.footer {
+    background-color: lighten(saturate(adjust-hue(map-get($colors, 'black'), 280), 5.66), 10.39);
+    
+    &Row {
+        @include media-breakpoint-up(lg) {
+            padding-right: 220px;
+        }
+    }
+
+    .follow {
+        @include media-breakpoint-up(lg) {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: auto;
+        }
+    }
+
+    .breadcrumb {
+        @include media-breakpoint-up(lg) {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
+
+    .accordion-custome {
+        &-button {
+            @include media-breakpoint-up(lg) {
+                &::after {
+                    display: none;
+                }
+            }
+        }
+        &-body {
+            @include media-breakpoint-up(lg) {
+                display: block;
+            }
+        }
+    }
+
+    &-banner  {
+        * {
+            width: auto;
+            padding: 0 2px;
+            margin-bottom: 4px;
+        }
+    }
+
+
+    // &-ac {
+    //     border-top: rgba(map-get($colors, 'white'), 0.3) 1px solid;
+    //     text-align: center;
+    //     font-size: 13px;
+    //     color: map-get($colors, 'white');
+    //     margin-top: 30px;
+    //     @include media-breakpoint-up(lg) {
+    //         padding-bottom: 0;
+    //         margin-top: 45px;
+    //     }
+    //     &-innr {
+    //         padding: 10px 15px;            
+    //         @include col;
+    //         align-items: center;
+    //         @include media-breakpoint-up(lg) {
+    //             @include row;
+    //             justify-content: flex-end;
+    //         }
+    //     }
+    //     &-siteName {
+    //         @include media-breakpoint-up(lg) {
+    //             margin-right: auto;
+    //         }
+    //     }
+    //     &-logo {
+    //         width: 40px;
+    //         @include media-breakpoint-up(md) {
+    //             margin-left: 15px;
+    //         }
+    //     }
+    //     a {
+    //         color: map-get($colors, 'white');
+    //         &:hover {
+    //             color: map-get($colors, 'primary');
+    //         }
+    //     }
+    // }
+}

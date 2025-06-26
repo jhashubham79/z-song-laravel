@@ -1,0 +1,462 @@
+
+.f700 {
+    font-weight: 700;
+}
+
+.f500 {
+    font-weight: 500;
+}
+
+.f400 {
+    font-weight: 400;
+}
+
+.f300 {
+    font-weight: 300;
+}
+
+.white-bg {
+    background-color: $lightColor;
+}
+
+.p-relater{
+    position: relative;
+}
+
+.zindex-1 {
+    z-index: 1;
+}
+
+.border-none {
+    border: none !important;
+}
+
+.text-sm {
+    font-size: 14px;
+}
+
+.text-md {
+    font-size: 16px;
+}
+
+.width-full {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+
+.u-text-shadow {
+    @include text-shadow(0, 2px, 10px, rgba($darkColor, 0.3));
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+
+.text-left {
+    text-align: left !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-xl-left {
+    @include for-size(xl-up) {
+        text-align: left !important;
+    }
+}
+
+.text-lg-left {
+    @include for-size(lg-up) {
+        text-align: left !important;
+    }
+}
+
+.text-md-left {
+    @include for-size(md-up) {
+        text-align: left !important;
+    }
+}
+
+.text-sm-left {
+    @include for-size(sm-up) {
+        text-align: left !important;
+    }
+}
+
+
+
+
+.text-xl-right {
+    @include for-size(xl-up) {
+        text-align: right !important;
+    }
+}
+
+.text-lg-right {
+    @include for-size(lg-up) {
+        text-align: right !important;
+    }
+}
+
+
+.text-md-right {
+    @include for-size(md-up) {
+        text-align: right !important;
+    }
+}
+
+
+
+.text-xl-center {
+    @include for-size(xl-up) {
+        text-align: center !important;
+    }
+}
+
+.text-lg-center {
+    @include for-size(lg-up) {
+        text-align: center !important;
+    }
+}
+
+.text-md-center {
+    @include for-size(md-up) {
+        text-align: center !important;
+    }
+}
+
+.text-sm-center {
+    @include for-size(sm-up) {
+        text-align: center !important;
+    }
+}
+
+
+
+.text-xl-right {
+    @include for-size(xl-up) {
+        text-align: right !important;
+    }
+}
+
+
+
+
+//pad top
+.pt-100 {
+    padding-top: 100px;
+}
+
+.pt-md-150 {
+    @include for-size(md-up) {
+        padding-top: 150px;
+    }
+}
+
+
+//pad botom
+.pb-100 {
+    padding-bottom: 100px;
+}
+
+.pb-md-250 {
+    @include for-size(md-up) {
+        padding-bottom: 250px;
+    }
+}
+
+
+//pad left
+.pl-0 {
+    padding-left: 0 !important;
+}
+
+.pl-15 {
+    padding-left: 15px !important;
+}
+
+.pl-1 {
+    padding-left: 1rem !important;
+}
+
+.pl-sm-1 {
+    @include for-size(md-up) {
+        padding-left: 1rem !important;
+    }
+}
+.pl-md-1 {
+    @include for-size(md-up) {
+        padding-left: 1rem !important;
+    }
+}
+.pl-lg-1 {
+    @include for-size(lg-up) {
+        padding-left: 1rem !important;
+    }
+}
+.pl-xl-1 {
+    @include for-size(xl-up) {
+        padding-left: 1rem !important;
+    }
+}
+
+
+.pl-2 {
+    padding-left: 2rem !important;
+}
+.pl-sm-2 {
+    @include for-size(md-up) {
+        padding-left: 2rem !important;
+    }
+}
+.pl-md-2 {
+    @include for-size(md-up) {
+        padding-left: 2rem !important;
+    }
+}
+.pl-lg-2 {
+    @include for-size(lg-up) {
+        padding-left: 2rem !important;
+    }
+}
+.pl-xl-2 {
+    @include for-size(xl-up) {
+        padding-left: 2rem !important;
+    }
+}
+
+
+.pl-3 {
+    padding-left: 3rem !important;
+}
+.pl-sm-3 {
+    @include for-size(md-up) {
+        padding-left: 3rem !important;
+    }
+}
+.pl-md-3 {
+    @include for-size(md-up) {
+        padding-left: 3rem !important;
+    }
+}
+.pl-lg-3 {
+    @include for-size(lg-up) {
+        padding-left: 3rem !important;
+    }
+}
+.pl-xl-3 {
+    @include for-size(xl-up) {
+        padding-left: 3rem !important;
+    }
+}
+
+.pl-4 {
+    padding-left: 4rem !important;
+}
+.pl-sm-4 {
+    @include for-size(md-up) {
+        padding-left: 4rem !important;
+    }
+}
+.pl-md-4 {
+    @include for-size(md-up) {
+        padding-left: 4rem !important;
+    }
+}
+.pl-lg-4 {
+    @include for-size(lg-up) {
+        padding-left: 4rem !important;
+    }
+}
+.pl-xl-4 {
+    @include for-size(xl-up) {
+        padding-left: 4rem !important;
+    }
+}
+
+
+.pl-5 {
+    padding-left: 4rem !important;
+}
+
+.pl-sm-5 {
+    @include for-size(md-up) {
+        padding-left: 5rem !important;
+    }
+}
+.pl-md-5 {
+    @include for-size(md-up) {
+        padding-left: 5rem !important;
+    }
+}
+.pl-lg-5 {
+    @include for-size(lg-up) {
+        padding-left: 5rem !important;
+    }
+}
+.pl-xl-5 {
+    @include for-size(xl-up) {
+        padding-left: 5rem !important;
+    }
+}
+
+//pad right
+.pr-0 {
+    padding-right: 0 !important;
+}
+
+.pr-15 {
+    padding-right: 15px !important;
+}
+
+.pr-1 {
+    padding-right: 1rem !important;
+}
+
+.pr-sm-1 {
+    @include for-size(sm-up) {
+        padding-right: 1rem !important;
+    }
+}
+
+.pr-md-1 {
+    @include for-size(md-up) {
+        padding-right: 1rem !important;
+    }
+}
+.pr-lg-1 {
+    @include for-size(lg-up) {
+        padding-right: 1rem !important;
+    }
+}
+
+.pr-xl-1 {
+    @include for-size(xl-up) {
+        padding-right: 1rem !important;
+    }
+}
+
+.pr-2 {
+    padding-right: 2rem !important;
+}
+.pr-sm-2 {
+    @include for-size(sm-up) {
+        padding-right: 2rem !important;
+    }
+}
+
+.pr-md-2 {
+    @include for-size(md-up) {
+        padding-right: 2rem !important;
+    }
+}
+.pr-lg-2 {
+    @include for-size(lg-up) {
+        padding-right: 2rem !important;
+    }
+}
+.pr-xl-2 {
+    @include for-size(xl-up) {
+        padding-right: 2rem !important;
+    }
+}
+
+
+.pr-3 {
+    padding-right: 3rem !important;
+}
+.pr-sm-3 {
+    @include for-size(sm-up) {
+        padding-right: 3rem !important;
+    }
+}
+
+.pr-md-3 {
+    @include for-size(md-up) {
+        padding-right: 3rem !important;
+    }
+}
+
+.pr-lg-3 {
+    @include for-size(lg-up) {
+        padding-right: 3rem !important;
+    }
+}
+
+.pr-xl-3 {
+    @include for-size(xl-up) {
+        padding-right: 3rem !important;
+    }
+}
+
+.pr-4 {
+    padding-right: 4rem !important;
+}
+.pr-sm-4 {
+    @include for-size(sm-up) {
+        padding-right: 4rem !important;
+    }
+}
+
+.pr-md-4 {
+    @include for-size(md-up) {
+        padding-right: 4rem !important;
+    }
+}
+
+.pr-lg-4 {
+    @include for-size(lg-up) {
+        padding-right: 4rem !important;
+    }
+}
+
+.pr-xl-4 {
+    @include for-size(xl-up) {
+        padding-right: 4rem !important;
+    }
+}
+
+.pr-5 {
+    padding-right: 5rem !important;
+}
+.pr-sm-5 {
+    @include for-size(sm-up) {
+        padding-right: 5rem !important;
+    }
+}
+
+.pr-md-5 {
+    @include for-size(md-up) {
+        padding-right: 5rem !important;
+    }
+}
+
+
+.pr-lg-5 {
+    @include for-size(lg-up) {
+        padding-right: 5rem !important;
+    }
+}
+
+.pr-xl-5 {
+    @include for-size(xl-up) {
+        padding-right: 5rem !important;
+    }
+}
+
+.light-gray-BG {
+    background-color: lighten($darkColor, 86.67);
+}
+
+.colm-md-2 {
+    @include for-size(md-up) {
+        column-count: 2;
+    }
+}

@@ -1,0 +1,103 @@
+
+
+.rota {
+    &-tags {
+        background-color: #272727;
+        padding: 7px;
+    }
+
+    &-day {
+        letter-spacing: 0.5px;
+    }
+
+    .btn {
+        &-collapse {
+            position: relative;
+            &::after {
+                @include afterBefor(50%, 0, 8px, 8px, 'primary', 0);
+                content: '\e905';
+                font-family: 'custome';
+                font-size: 6px;
+                left: inherit;
+                right: 8px;
+                @include transform(translateY(-50%));
+            }
+            &.collapsed {
+                &::after {
+                    content: '\e906';
+                }
+            }
+        }
+
+        &-readmore {
+            letter-spacing: 0.5px;
+            font-size: 10px;
+            &::before {
+                content: '- Show less';
+            }
+            &.collapsed {
+                &::before {
+                    content: '+ Show more';
+                }
+            }
+        }
+    }
+
+    &-col {
+        width: 100%;
+        padding: 0 8px;
+        @include media-breakpoint-up(md) {
+            width: 14.2857%;
+        }
+    }
+
+    &-md {
+        &-floated {
+            @include media-breakpoint-up(md) {
+                position: fixed;
+                z-index: 122;
+                width: 211px;
+                padding: 20px 15px !important;
+                background-color: #272727;
+                border-radius: 5px;
+                top: 50%;
+                left: 50%;
+                @include transform(translate(-50%, -50%));
+                @include box-shadow(0, 0, 19px, 1px, rgba(#000, 0.8));
+            }
+        }
+    }
+
+    &-week {
+        &-wrap {
+            @include media-breakpoint-up(md) {                
+                overflow-x: auto;
+            } 
+
+            > div {
+                @include media-breakpoint-up(md) {
+                    min-width: 1310px;
+                }
+                @include media-breakpoint-up(xl) {
+                    min-width: 100%;
+                }
+            }
+        }
+    }
+
+    &-date {
+        @include media-breakpoint-down(md) {
+            width: 72px;
+        }
+    }
+
+    .btn-close {
+        background-image: url('../images/close-light.svg');
+        opacity: 1;
+        cursor: pointer;
+    }
+}
+
+.notavailable {
+    background-color: rgba(#272727, 0.5);
+}

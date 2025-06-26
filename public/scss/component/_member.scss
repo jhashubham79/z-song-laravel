@@ -1,0 +1,27 @@
+
+
+// .member {
+//     &-login {
+//         position: relative;
+//         border-bottom: mix(map-get($colors, 'black'), #fff, 10%) 1px solid;
+//         @include media-breakpoint-up(md) {
+//             border-bottom: none;
+//             border-right: mix(map-get($colors, 'black'), #fff, 10%) 1px solid;
+//         }
+
+//         &::after {
+//             @include afterBefor(50%, 0, 32px, 32px, 'white', 0);
+//             background-image: url('../img/devider-bloom.svg');
+//             top: inherit;
+//             bottom: -17px;
+//             left: 50%;
+//             transform: translate(-50%, 0);
+//             @include media-breakpoint-up(md) {
+//                 top: 50%;
+//                 left: inherit;
+//                 right: -17px;
+//                 transform: translate(0, -50%) rotate(90deg);
+//             }
+//         }
+//     }
+// }

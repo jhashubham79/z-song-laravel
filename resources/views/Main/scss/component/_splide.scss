@@ -1,0 +1,19 @@
+
+
+.splide {
+    &-arrow {
+        .splide {
+            &__arrow {
+                background-color: transparent;
+                font-size: 18px;
+                
+                svg {
+                    fill: map-get($colors, 'white');
+                    width: 100%;
+                    height: auto;
+                    filter: drop-shadow(0px 0px 10px #000);
+                }
+            }
+        }
+    }
+}

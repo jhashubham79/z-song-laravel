@@ -1,0 +1,152 @@
+
+
+.gallery {
+    &-masonry {
+        column-count: 1;
+        column-gap: 12px;
+        @include media-breakpoint-up(md) {
+            column-count: 2;
+        }
+        @include media-breakpoint-up(lg) {
+            column-count: 3;
+        }
+
+        &-item {
+            box-sizing: border-box;
+            -webkit-column-break-inside: avoid;
+            page-break-inside: avoid;
+            break-inside: avoid;
+            counter-increment: brick-counter;
+            margin-bottom: 12px;
+            display: block;
+        }
+    }
+
+    &-single {
+        .h1 {
+            font-size: 65px;
+            @include media-breakpoint-down(lg) {
+                font-size: 56px;
+                position: relative;
+                bottom: -12px;
+                line-height: 1;
+            }
+        }
+
+        &-start {
+            width: 100%;
+            @include media-breakpoint-up(lg) {
+                width: 58.3333%;
+            }
+            @include media-breakpoint-up(xl) {
+                width: 64.6666%;
+            }
+            @include media-breakpoint-up(xxl) {
+                width: 66.6666%;
+            }
+        }
+
+        &-end {
+            width: 100%;
+            @include media-breakpoint-up(lg) {
+                width: 41.6667%;
+            }
+            @include media-breakpoint-up(xl) {
+                width: 412px;
+            }
+        }
+
+        .favourites {
+            i:not(.active) {
+                color: map-get($colors, 'white');
+                filter: drop-shadow(0px 0px 1px #131114);
+            }
+        }
+
+        .splide {
+            &__pagination {
+                right: 9px;
+                z-index: 1;
+                width: 48px;
+                left: inherit;
+                padding: 5px 10px;
+                border-radius: 4px;
+                margin-left: auto;
+                background: rgba(map-get($colors, 'black'), 0.7);
+                &::before {
+                    content: attr(data-count) '/';
+                    font-size: 12px;
+                    color: map-get($colors, 'white');
+                    letter-spacing: 1.5px;
+                }
+                &__page {
+                    background-color: transparent;
+                    width: auto;
+                    height: auto;
+                    font-size: 12px;
+                    color: map-get($colors, 'white');
+                    display: none;
+                    opacity: 1;
+                    margin: 0;
+                    &.is-active {
+                        display: block;
+                        @include transform(scale(1));
+                    }
+                }
+            }
+        }
+
+        &-slider {
+            &-wrap {
+                padding-top: 482px;
+                @include media-breakpoint-up(lg) {
+                    padding-top: 350px;
+                }
+                @include media-breakpoint-up(xl) {
+                    padding-top: 598px;
+                }
+            }
+        }
+
+        &-about {
+            width: 100%;
+            max-width: 860px;
+
+            .cms {
+                p {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+
+    &-item {
+        .h3 {
+            letter-spacing: 1.5px;
+        }        
+
+        .stm {
+            &::before {
+                @include afterBefor(50%, 50%, 94%, 96%, 'primary', 0);
+                border: map-get($colors, 'primary') 1px solid;
+                z-index: 12;
+                @include transform(translate(-50%, -50%));
+            }
+            &-batch {
+                z-index: 13;
+            }
+        }
+    }
+
+    &-duo {
+        &-title {
+            padding-top: 13px;
+            padding-bottom: 13px;
+        }
+    }
+}
+
+
+.tagline, .location {
+    letter-spacing: 1px;
+}

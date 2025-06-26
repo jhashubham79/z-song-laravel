@@ -1,0 +1,94 @@
+.upload {
+    &-image {
+        margin-bottom: 8px;
+        padding: 0 4px;
+        width: 50%;
+        @media(min-width: 480px) {
+            width: 33.3333%;
+        }
+        @include media-breakpoint-up(sm) {
+            width: 20%;
+        }
+        @include media-breakpoint-up(md) {
+            width: 25%;
+        }
+        @include media-breakpoint-up(lg) {
+            width: 16.6666%;
+        }
+        @include media-breakpoint-up(xl) {
+            width: calc(142px - 8px);
+            margin: 0 4px 8px;
+            padding: 0;
+        }
+
+        .btn {
+            font-size: 13px;
+            position: absolute;
+            left: 50%;
+            bottom: 8px;
+            white-space: nowrap;
+            transform: translateX(-50%);
+        }
+    }
+
+    &-btn {
+        height: 200px;
+        
+        input {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 12;
+        }
+    }
+
+    &-priview {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        width: 0;
+        height: 0;
+        z-index: 12;
+        &.active {
+            opacity: 1;
+            width: 100%;
+            height: 100%;
+            padding: 10px;            
+            background-color: rgba(map-get($colors, 'black'), 0.3);
+            backdrop-filter: blur(3px);
+        }
+
+        img {
+            width: auto;
+            height: 180px;
+            object-fit: cover;
+            object-position: top center;
+            border-radius: 5px;
+        }
+    }
+
+    &-video {
+        margin: 0 4px;
+        textarea {
+            resize: none;
+            height: 193px;
+            &:focus {
+                outline: 0;
+            }
+        }
+        .btn {
+            position: absolute;
+            bottom: 4px;
+            right: 0;
+            opacity: 1;
+            &[disabled] {
+                opacity: 0;
+            }
+        }
+    }
+}
